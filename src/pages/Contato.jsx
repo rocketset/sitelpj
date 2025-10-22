@@ -3,7 +3,6 @@ import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
   Mail, 
-  Phone, 
   MapPin, 
   Clock, 
   Send, 
@@ -50,26 +49,20 @@ const Contato = () => {
     {
       icon: Mail,
       title: "E-mail",
-      content: "contato@leadspj.com",
+      content: "sac@leadspj.com",
       description: "Resposta em até 2 horas"
-    },
-    {
-      icon: Phone,
-      title: "Telefone",
-      content: "(11) 99999-9999",
-      description: "Seg à Sex, 9h às 18h"
     },
     {
       icon: MessageCircle,
       title: "WhatsApp",
-      content: "(11) 99999-9999",
+      content: "(83) 99173-6111",
       description: "Atendimento imediato"
     },
     {
       icon: MapPin,
       title: "Endereço",
-      content: "São Paulo, SP",
-      description: "Brasil"
+      content: "Av. Cabo Branco, 1780, Cabo Branco",
+      description: "João Pessoa/PB"
     }
   ];
 
@@ -415,13 +408,15 @@ const Contato = () => {
                 </motion.div>
                 
                 <motion.a
-                  href="tel:(11)99999-9999"
+                  href="https://wa.me/5583991736111"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center gap-3 bg-white/20 hover:bg-white/30 text-white font-bold px-8 py-4 rounded-xl backdrop-blur-sm transition-all duration-300"
                 >
-                  <Phone className="w-5 h-5" />
-                  Ligar Agora
+                  <MessageCircle className="w-5 h-5" />
+                  WhatsApp
                 </motion.a>
               </div>
 

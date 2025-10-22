@@ -405,13 +405,15 @@ const Planos = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link
-                to="/sobre"
+              <a
+                href="https://p.leadspj.com/auth/register?planId=cmgo3hhcc000112rr4tiwip6j"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center gap-3 text-xl"
               >
                 Começar Agora
                 <ArrowRight className="w-6 h-6" />
-              </Link>
+              </a>
             </motion.div>
 
             <p className="text-sm text-text-secondary mt-4">
