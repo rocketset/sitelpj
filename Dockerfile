@@ -1,37 +1,19 @@
-# Multi-stage build para otimizar o tamanho da imagem final
-
-# Estágio 1: Build da aplicação
-FROM node:18-alpine AS builder
-
-# Definir diretório de trabalho
+# ---- build (Vite) ----
+FROM node:20-alpine AS build
 WORKDIR /app
-
-# Copiar arquivos de dependências
 COPY package*.json ./
-
-# Instalar dependências
-RUN npm ci --only=production
-
-# Copiar código fonte
+RUN npm ci
 COPY . .
-
-# Build da aplicação para produção
+# Passe variáveis de build com prefixo VITE_ pelo EasyPanel se precisar
+ARG VITE_API_URL
+ENV VITE_API_URL=${VITE_API_URL}
 RUN npm run build
 
-# Estágio 2: Servidor Nginx
-FROM nginx:alpine
-
-# Remover configuração padrão do Nginx
-RUN rm /etc/nginx/conf.d/default.conf
-
-# Copiar configuração customizada do Nginx
-COPY docker/nginx.conf /etc/nginx/conf.d/
-
-# Copiar arquivos buildados do estágio anterior
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-# Expor porta 80
-EXPOSE 80
-
-# Comando para iniciar o Nginx
+# ---- runtime (Nginx) ----
+FROM nginx:1.27-alpine
+# Nginx ouvindo 4005 e SPA fallback
+COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 4007
+HEALTHCHECK --interval=30s --timeout=3s CMD wget -qO- http://127.0.0.1:4007/ || exit 1
 CMD ["nginx", "-g", "daemon off;"]
