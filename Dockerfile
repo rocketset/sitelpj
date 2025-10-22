@@ -1,8 +1,8 @@
 # ---- build (Vite) ----
 FROM node:20-alpine AS build
 WORKDIR /app
-COPY package*.json ./
-RUN npm ci
+COPY package*.json .npmrc ./
+RUN npm ci --legacy-peer-deps
 COPY . .
 # Passe variáveis de build com prefixo VITE_ pelo EasyPanel se precisar
 ARG VITE_API_URL
