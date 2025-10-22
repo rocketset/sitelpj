@@ -9,6 +9,7 @@ import {
 import FloatingParticles from '../components/FloatingParticles';
 import GradientBlob from '../components/GradientBlob';
 import AnimatedCounter from '../components/AnimatedCounter';
+import SEO from '../components/SEO';
 
 const Home = () => {
   const heroRef = useRef(null);
@@ -31,7 +32,20 @@ const Home = () => {
   ];
 
   return (
-    <div className="overflow-hidden bg-gradient-to-b from-blue-50 to-white">
+    <>
+      <SEO 
+        title="LeadsPJ | CRM + Prospecção B2B, WhatsApp com I.A e Empresas Abertas Hoje"
+        description="Encontre empresas qualificadas, acesse CNPJs abertos no dia, automatize WhatsApp com I.A e gerencie seu funil em um só lugar. Teste a LeadsPJ hoje."
+        keywords="CRM B2B, prospecção, leads, WhatsApp automação, empresas abertas, CNPJ, vendas B2B"
+        ogTitle="LeadsPJ | CRM + Prospecção B2B, WhatsApp com I.A"
+        ogDescription="Transforme leads em vendas com CRM + Prospecção B2B + Automação de WhatsApp com I.A"
+        ogUrl="https://leadspj.com/"
+        twitterCard="summary_large_image"
+        twitterUrl="https://leadspj.com/"
+        twitterTitle="LeadsPJ | CRM + Prospecção B2B"
+        twitterDescription="Transforme leads em vendas com CRM + Prospecção B2B + Automação de WhatsApp com I.A"
+      />
+      <div className="overflow-hidden bg-gradient-to-b from-blue-50 to-white">
       
       {/* ============ HERO SECTION ============ */}
       <section ref={heroRef} className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
@@ -1552,7 +1566,8 @@ const Home = () => {
         </div>
       </section>
 
-    </div>
+      </div>
+    </>
   );
 };
 

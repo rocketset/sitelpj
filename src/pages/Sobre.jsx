@@ -19,6 +19,7 @@ import {
 import PlanCard from '../components/PlanCard';
 import FloatingParticles from '../components/FloatingParticles';
 import GradientBlob from '../components/GradientBlob';
+import SEO from '../components/SEO';
 
 const Planos = () => {
   const heroRef = useRef(null);
@@ -129,7 +130,20 @@ const Planos = () => {
   ];
 
   return (
-    <div className="overflow-hidden">
+    <>
+      <SEO 
+        title="Planos LeadsPJ | Escolha o Melhor CRM + Prospecção B2B para Sua Empresa"
+        description="Conheça os planos da LeadsPJ: Basic, Profissional e Enterprise. CRM integrado, automação de WhatsApp com I.A e acesso a empresas abertas hoje. Teste grátis!"
+        keywords="planos LeadsPJ, preços CRM B2B, planos prospecção, WhatsApp automação preços, CRM empresarial"
+        ogTitle="Planos LeadsPJ | CRM + Prospecção B2B"
+        ogDescription="Escolha o plano ideal para sua empresa: Basic, Profissional ou Enterprise. CRM + Automação + Leads qualificados."
+        ogUrl="https://leadspj.com/sobre"
+        twitterCard="summary_large_image"
+        twitterUrl="https://leadspj.com/sobre"
+        twitterTitle="Planos LeadsPJ | CRM + Prospecção B2B"
+        twitterDescription="Escolha o plano ideal para sua empresa: Basic, Profissional ou Enterprise. CRM + Automação + Leads qualificados."
+      />
+      <div className="overflow-hidden">
       
       {/* ============ HERO SECTION ============ */}
       <section ref={heroRef} className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
@@ -406,7 +420,8 @@ const Planos = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 
