@@ -89,13 +89,15 @@ const Header = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                <Link
-                  to="/sobre"
+                <a
+                  href="https://p.leadspj.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="ml-4 bg-accent hover:bg-accent/90 text-text-primary font-bold px-6 py-3 rounded-lg inline-flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-200"
                 >
                 Acessar Plataforma
                 <ChevronRight className="w-4 h-4" />
-                </Link>
+                </a>
               </motion.div>
             </div>
 
@@ -184,13 +186,15 @@ const Header = () => {
                   transition={{ delay: 0.3 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <Link
-                    to="/sobre"
+                  <a
+                    href="https://p.leadspj.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="mt-8 w-full bg-accent hover:bg-accent/90 text-text-primary font-bold px-6 py-4 rounded-lg inline-flex items-center justify-center gap-2 shadow-lg"
                   >
                     Acessar Plataforma
                   <ChevronRight className="w-5 h-5" />
-                  </Link>
+                  </a>
                 </motion.div>
               </div>
             </motion.div>
