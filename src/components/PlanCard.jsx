@@ -4,6 +4,8 @@ import { Check, Sparkles, Crown, Rocket, Gem, ArrowRight } from 'lucide-react';
 const PlanCard = ({ 
   title, 
   price, 
+  originalPrice,
+  priceSuffix,
   subtitle, 
   features, 
   isPopular = false, 
@@ -75,9 +77,14 @@ const PlanCard = ({
           <h3 className="text-2xl font-bold text-gray-800 mb-2">{title}</h3>
 
           {/* Price */}
-          <div className="mb-3">
-            <span className={`text-5xl font-black ${theme.textColor}`}>{price}</span>
-            <span className="text-lg text-gray-500">/mês</span>
+          <div className="mb-3 h-20 flex flex-col justify-center items-center">
+            {originalPrice && (
+              <span className="text-2xl text-gray-400 line-through">R$ {originalPrice}</span>
+            )}
+            <div>
+              <span className={`text-5xl font-black ${theme.textColor}`}>R$ {price}</span>
+              <span className="text-lg text-gray-500">{priceSuffix || '/mês'}</span>
+            </div>
           </div>
 
           {/* Subtitle */}

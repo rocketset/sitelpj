@@ -30,9 +30,11 @@ const Planos = () => {
   const plans = [
     {
       title: "Basic",
-      price: "97,00",
+      price: "79,00",
+      originalPrice: "97,00",
+      priceSuffix: "/primeiro mês",
       subtitle: "Inicie e turbine suas vendas com CRM + Leads",
-      link: "https://p.leadspj.com/auth/register?planId=cmgo3hhcc000112rr4tiwip6j",
+      link: "https://p.leadspj.com/auth/register?planId=cmgvdk0un00jb82uhslep2s4m",
       features: [
         "1.000 Créditos mensais",
         "3 Usuários",
@@ -279,15 +281,10 @@ const Planos = () => {
           {/* Plans Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
             {plans.map((plan, index) => (
-              <PlanCard
-                key={plan.title}
-                title={plan.title}
-                price={plan.price}
-                subtitle={plan.subtitle}
-                features={plan.features}
-                isPopular={plan.isPopular}
-                link={plan.link}
-                delay={index * 0.2}
+              <PlanCard 
+                key={index}
+                {...plan}
+                delay={index * 0.1}
               />
             ))}
           </div>

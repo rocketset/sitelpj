@@ -10,6 +10,7 @@ import FloatingParticles from '../components/FloatingParticles';
 import GradientBlob from '../components/GradientBlob';
 import AnimatedCounter from '../components/AnimatedCounter';
 import SEO from '../components/SEO';
+import CampaignCTA from '../components/CampaignCTA';
 
 const Home = () => {
   const heroRef = useRef(null);
@@ -266,8 +267,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ============ COMO FUNCIONA ============ */}
-      <section id="como-funciona" className="py-32 bg-white relative overflow-hidden">
+      {/* ============ CAMPAIGN CTA SECTION ============ */}
+      <CampaignCTA />
+
+      {/* ============ COMO FUNCIONA ============ */}      <section id="como-funciona" className="py-32 bg-white relative overflow-hidden">
         
         {/* Background decorative blobs */}
         <GradientBlob 
