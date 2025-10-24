@@ -16,7 +16,7 @@ const CampaignCTA = () => {
                 transition={{ duration: 0.5 }}
               >
                 <Zap className="w-5 h-5" />
-                <span>Oferta Exclusiva Meta Ads</span>
+                <span>Oferta Exclusiva</span>
               </motion.div>
               <motion.h2 
                 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3"
